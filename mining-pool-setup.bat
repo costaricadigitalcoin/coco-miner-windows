@@ -17,7 +17,7 @@ if not "%BILLETERA:~34%" == "" (
     pause 
     exit /b
 )
-if "%BILLETERA:~33%" == "" (
+if "%BILLETERA:~32%" == "" (
     echo "La direccion ingresada es incorrecta, su direccion es la que se encuentra en el tablero de su wallet en el boton de recibir"
     pause
     exit /b
