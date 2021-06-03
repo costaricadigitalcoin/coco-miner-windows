@@ -1,14 +1,14 @@
-@echo Bienvenido al configurador del minado de Costa Rica Digital Coin
+@echo Bienvenido al configurador del minado de COCOCR
 @echo.
 @echo Requisitos:
-@echo 1) Direccion de billetera de COCO (puedes obtenerla al registrarse en https://wallet.costaricadigitalcoin.com/)
+@echo 1) Direccion de billetera de COCO (puedes obtenerla desde alguna de nuestras billeteras que se encuentran disponibles en https://github.com/costaricadigitalcoin?tab=repositories)
 @echo.
-@echo 2) Algunos antivirus pueden detectar como Programa no deseado al programada de minado, en caso de que esto ocurra, por favor excluya al archivo minerd.exe de su antivirus
+@echo 2) Algunos antivirus pueden detectar como Programa no deseado al programada de minado, en caso de que esto ocurra, por favor excluya al archivo cpuminer-gw64-core2.exe de su antivirus
 @echo.
 @echo 3) Algunos firewall pueden bloquear la comunicacion entre su computadora y nuestro servidor, por favor permita las conexiones salientes a cpuminer-gw64-core2.exe
 @echo.
 
-@echo Por favor ingrese la direccion de su billetera para recibir los COCO minados
+@echo Por favor ingrese la direccion de su billetera para recibir los COCOCR minados
 @echo off
 set /p BILLETERA=
 @echo.
@@ -22,7 +22,7 @@ if "%BILLETERA:~32%" == "" (
     pause
     exit /b
 )
-@echo cpuminer-gw64-core2.exe -a x11 -o stratum+tcp://costaricadigitalcoin.com:3008 -u %BILLETERA% -p anything  > mine_pool.bat
+@echo cpuminer-gw64-core2.exe -a x11 -o stratum+tcp://miningpool.costaricadigitalcoin.com:3008 -u %BILLETERA% -p anything  > mine_pool.bat
 SET ENTORNO=%PROCESSOR_ARCHITECTURE% 
 if %ENTORNO% ==AMD64 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://www.costaricadigitalcoin.com/wp-content/uploads/2020/12/cpuminer-windows.zip', 'cpuminer-windows.zip')"
 if %ENTORNO% ==x86 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://www.costaricadigitalcoin.com/wp-content/uploads/2020/12/cpuminer-windows.zip', 'cpuminer-windows.zip')"
